@@ -1,6 +1,2 @@
-<!DOCTYPE html>
-<html>
-<body>
 [Lotus](./lotus.html) - [Levi Lopez](https://github.com/llopez020)
-</body>
-</html>
+
