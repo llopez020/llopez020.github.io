@@ -6,7 +6,7 @@ var pico8_buttons = pico8_buttons || [0, 0, 0, 0, 0, 0, 0, 0];
 function nfig(settings){
     console.log("nfig initialising...");
 
-    const storage_key = "nfig-mappings-{{MAJOR_VERSION}}";
+    const storage_key = "nfig-mappings-v1";
 
     window.addEventListener("load", () => {
         document.removeEventListener("keydown", SDL.receiveEvent);
@@ -172,7 +172,7 @@ function nfig(settings){
 
     const css = document.createElement("link");
     css.rel="stylesheet";
-    css.href="panel.css";
+    css.href="data:text/css;base64,Lm5maWctcGFuZWwge3Bvc2l0aW9uOiBhYnNvbHV0ZTtyaWdodDogMDtib3R0b206IDA7d2lkdGg6IDM3MHB4O2JhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMCwgMCwgMC45KTtjb2xvcjogd2hpdGU7Zm9udC1mYW1pbHk6IFZlcmRhbmEsIHNhbnMtc2VyaWY7Zm9udC1zaXplOiA5cHQ7cGFkZGluZzogNnB4O21hcmdpbjogMXB4O3RyYW5zZm9ybTogdHJhbnNsYXRleSgxMDAlKTt0ZXh0LWFsaWduOiBsZWZ0O30ubmZpZy1wYW5lbC5zaG93biB7dHJhbnNmb3JtOiB0cmFuc2xhdGV5KDApO3RyYW5zaXRpb246IHRyYW5zZm9ybSAzMDBtczt9Lm5maWctY29udGFpbmVyIHtvdmVyZmxvdzogaGlkZGVuO3Bvc2l0aW9uOiByZWxhdGl2ZTt9I25maWctY2xvc2Uge2Rpc3BsYXk6IGlubGluZS1ibG9jaztmbG9hdDogcmlnaHQ7fSNuZmlnLWNvbnRyb2xsZXIge21heC13aWR0aDogMjUwcHg7ZmxvYXQ6IHJpZ2h0O2NsZWFyOiByaWdodDt9I25maWctY29udHJvbGxlciBnIHBhdGgge2ZpbGw6IHdoaXRlO30jbmZpZy1jb250cm9sbGVyIGcubWFwcGluZyBwYXRoIHtmaWxsOiBvcmFuZ2U7fSNuZmlnLWNvbnRyb2xsZXIgZy5wcmVzc2VkIHBhdGgge2ZpbGw6IHBpbms7fS5uZmlnLWxlZnQge21hcmdpbjogMWVtO30=";
     document.body.appendChild(css);
 
     const container_el = document.createElement("div");
@@ -195,7 +195,7 @@ function nfig(settings){
 
     let panel_contents = '<div id="nfig-title">Remap controls <button id="nfig-close">Done</button></div>';
 
-    panel_contents += '{{SVG}}';
+    panel_contents += '<svg xmlns="http://www.w3.org/2000/svg" id="nfig-controller" viewBox="0 0 244.0124 148.0124"><g data-nfig-btn="left"><path d="M28.3465 60.3465H55.666V87.666H28.3465V60.3465zm7.327 13.66l10.798 6.782v-13.564l-10.798 6.782z"/><rect x="28" y="60" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="right"><path d="M119.666 60.3465H92.3465V87.666h27.3195V60.3465zm-7.327 13.66l-10.798 6.782v-13.564l10.798 6.782z"/><rect x="92" y="60" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="up"><path d="M60.3465 28.3465V55.666H87.666V28.3465H60.3465zm13.66 7.327l6.782 10.798h-13.564l6.782-10.798z"/><rect x="60" y="28" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="down"><path d="M60.3465 119.666V92.3465H87.666v27.3195H60.3465zm13.66-7.327l6.782-10.798h-13.564l6.782 10.798z"/><rect x="60" y="92" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="o"><path d="M142.6867 60.3465V87.666h27.3195V60.3465h-27.3195zm13.6594 6.129c4.1375 0 7.5312 3.393 7.5312 7.5304 0 4.1372-3.3937 7.5303-7.531 7.5303-4.1374 0-7.5305-3.393-7.5305-7.5304 0-4.1375 3.393-7.5305 7.5304-7.5305zm0 3.6666c-2.1556 0-3.8636 1.7082-3.8636 3.864 0 2.1555 1.708 3.8636 3.8637 3.8636 2.1558 0 3.864-1.708 3.864-3.8637 0-2.1558-1.7082-3.864-3.864-3.864z"/><rect x="142" y="60" width="28" height="28" fill-opacity="0"/></g><g data-nfig-btn="x"><path d="M188.3465 60.3465V87.666h27.3195V60.3465h-27.3195zm7.5864 5.431a1.948 1.948 0 0 1 1.3888.6108l4.684 4.8218 4.685-4.8217a1.948 1.948 0 0 1 1.33-.6087 1.948 1.948 0 0 1 1.4636 3.323l-4.763 4.9033 4.763 4.9025a1.948 1.948 0 1 1-2.7937 2.715l-4.6848-4.8225-4.6842 4.8224a1.948 1.948 0 1 1-2.7944-2.715l4.763-4.9025-4.763-4.9035a1.948 1.948 0 0 1 1.4055-3.325z"/><rect x="188" y="60" width="28" height="28" fill-opacity="0"/></g></svg>';
 
     panel_contents += '<div class="nfig-left">';
     if(max_players <= 1){
@@ -288,7 +288,7 @@ function nfig(settings){
 
     if(typeof settings.noButton == "undefined"){
         const config_button = document.querySelectorAll(".pico8_el")[4];
-        config_button.innerHTML = '<img src="icon.png" width="12" height="12"> Remap';
+        config_button.innerHTML = '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QELDRogeDaFdgAAAHxJREFUSMdjYBjqgBGXxP+PL+BMQmpRDOSXQOEz0doHRFvAyC+B4TqqWkAuYMES5uguZ4TK/yc2/gbGB0SkJnQXE5W6Bk8qIhb8//gCJT6Z6JaTsaQSqpg9oKmIES21kOZ8aK4fEB8wUtMnA+KD/9Rw+aAoi/4PyqJi+AEAK5Ud5NJbqZQAAAAASUVORK5CYII=" width="12" height="12"> Remap';
         config_button.addEventListener("click", toggle);
     }
 
